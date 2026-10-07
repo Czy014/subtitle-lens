@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "字幕透镜",
+  "version": "0.1.0",
+  "description": "可拖动的毛玻璃透镜，遮挡视频里烧录的中文字幕",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*",
+        "*://*.bilibili.com/*"
+      ],
+      "js": ["shared.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

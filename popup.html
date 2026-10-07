@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>字幕透镜</h1>
+
+  <div id="status" class="status hidden">仅在 YouTube / Bilibili 页面可用</div>
+
+  <label class="row toggle-row">
+    <span>显示透镜</span>
+    <input type="checkbox" id="visible">
+  </label>
+
+  <div class="row">
+    <span>遮挡模式</span>
+    <span class="modes">
+      <label><input type="radio" name="mode" value="blur" checked> 模糊</label>
+      <label><input type="radio" name="mode" value="morph"> 形态学</label>
+    </span>
+  </div>
+
+  <div class="row">
+    <span id="strength-label">模糊强度</span>
+    <span id="strength-value" class="value"></span>
+  </div>
+  <input type="range" id="strength" min="0" max="30" step="1" value="16">
+
+  <p id="morph-unsupported" class="hint hidden">当前浏览器不支持形态学档，已回退模糊档</p>
+
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
